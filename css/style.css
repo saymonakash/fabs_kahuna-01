@@ -1,0 +1,61 @@
+/*----font style-----*/
+@font-face {
+	font-family: 'HVHarietta';
+             src: url('/fonts/hv-harietta-bold.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'HVHarietta';
+             src: url('/fonts/hv-harietta-regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[x-cloak] { display: none !important; }
+
+body {
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+  
+    -webkit-hyphenate-limit-before: 4; /* For Safari */
+    -webkit-hyphenate-limit-after: 5; /* For Safari */
+    -ms-hyphenate-limit-chars: 10 4 5;
+    hyphenate-limit-chars: 10 4 5;
+}
+
+.main-grid {
+    @apply xl:px-0 lg:px-10 px-5 lg:pt-20 sm:pt-16 pt-10;
+    @apply grid lg:grid-cols-12 sm:grid-cols-8 grid-cols-4 gap-0;
+}
+
+h1, h2, h3, h4,h5,.font-Harietta {
+    font-family: "HVHarietta",serif;
+    font-weight: bold !important;
+}
+h1{
+    @apply lg:text-4xl text-3xl lg:leading-[52px] leading-[46px] !important;
+}
+h2{
+    @apply lg:text-3.5xl text-3xl lg:leading-[36px] leading-[32px] !important;
+}
+h3{
+    @apply lg:text-3xl text-2xl lg:leading-[36px] sm:leading-[32px] leading-[26px] !important;
+}
+h4{
+    @apply text-xl sm:text-3xl lg:text-3.5xl lg:leading-[38px] leading-[32px] !important;
+}
+.btn{
+    @apply lg:px-6 lg:py-3.5 px-5 py-3 lg:rounded-full rounded-3xl bg-brown-200 bg-opacity-10  backdrop-blur-sm;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
