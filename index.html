@@ -33,12 +33,16 @@
     class="leading-normal relative"
   >
     <!-- ==========header========== -->
-    <header class="fixed top-0 left-0 right-0 z-40" x-data="{minMenu: false}">
+    <header
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-40 duration-500"
+      x-data="{minMenu: false}"
+    >
       <!--========-->
       <div
         class="transition-all duration-400 ease-in-out main-grid py-5"
         :class="minMenu ? 'lg:h-28 h-36 bg-brown-200 text-brown-400 drop-shadow-xl' : 'sm:h-48 h-28 text-light-brown'"
-        x-on:scroll.window="minMenu = (window.pageYOffset > window.outerHeight * 0.005) ? true : false"
+        x-on:scroll.window="minMenu = (window.pageYOffset > 200) ? true : false"
       >
         <!--========-->
         <div class="hidden xl:flex col-span-1"></div>
@@ -96,21 +100,21 @@
             class="fixed inset-0 z-50 bg-black h-screen backdrop-blur-md bg-opacity-40 text-brown-200"
           >
             <!--========-->
-            <div class="main-grid w-full">
+            <div class="main-grid w-full pt-5 sm:pt-16 sm:mt-1">
               <!--========-->
               <div class="col-span-1">
                 <!--========-->
-                <div class="h-full flex items-center">
+                <div class="h-full flex sm:items-start items-center">
                   <!--========-->
                   <button
                     @click="menuOpen = false"
                     aria-label="Open Menu Button"
-                    class="flex flex-col items-center"
+                    class="btn"
                   >
                     <!--========-->
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      class="h-10 lg:h-12 w-10 lg:w-12"
+                      class="h-6 w-6"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -259,17 +263,17 @@
     <!--====================main====================-->
     <main>
       <!-- ==========section 001========== -->
-      <section class="h-900 relative">
+      <section class="h-screen relative">
         <!--========-->
         <img
-          class="h-full w-full -z-20 absolute inset-0"
+          class="h-full w-full -z-20 absolute inset-0 object-cover"
           src="images/home/bg1.jpg"
           alt="//"
         />
         <!--========-->
         <div class="-z-10 bg-brown-500 inset-0 absolute bg-opacity-60"></div>
         <!--========-->
-        <div class="main-grid h-full w-full sm:items-end items-center sm:pb-44">
+        <div class="main-grid h-full w-full sm:items-end items-center sm:pb-28">
           <!--========-->
           <div class="hidden sm:flex col-span-2 lg:col-span-1"></div>
           <!--========-->
@@ -367,7 +371,56 @@
                 class="sm:col-span-4 col-span-full lg:col-span-6 xl:col-span-4 sm:order-3 order-1 h-full relative"
               >
                 <img
-                  class="aspect-auto w-full sm:rounded-r-3xl rounded-t-3xl sm:rounded-tl-none h-full"
+                  class="aspect-auto w-full sm:rounded-r-3xl rounded-t-3xl sm:rounded-tl-none h-full object-cover"
+                  src="images/Home/1.jpg"
+                  alt="//"
+                />
+                <div class="sm:hidden block">
+                  <!--====button====-->
+                  <div class="swiper-button-next text-brown-400"></div>
+                  <div class="swiper-button-prev text-brown-400"></div>
+                </div>
+              </div>
+              <!--========-->
+              <div class="hidden xl:flex col-span-1 order-4"></div>
+            </div>
+            <!--========-->
+            <div class="main-grid items-center swiper-slide pb-10">
+              <!--========-->
+              <div class="hidden xl:flex col-span-1 order-1"></div>
+              <!--========-->
+              <div
+                class="sm:col-span-4 col-span-full lg:col-span-6 xl:col-span-6 lg:space-y-7 space-y-5 sm:order-2 order-3 sm:rounded-l-3xl rounded-b-3xl sm:rounded-br-none bg-brown-200 h-full flex flex-col justify-center xl:p-14 p-5"
+              >
+                <!--========-->
+                <h1>Warum</h1>
+                <!--========-->
+                <p class="xl:w-4/5">
+                  Ich bin der Überzeugung, dass miteinander reden das wichtigste
+                  ist. Immer wieder erlebe ich Situationen, in denen ich denke,
+                  wenn Sie doch „nur“ miteinander reden würden oder könnten. Es
+                  würde sich vieles verändern. Hierzu gehört für mich auch der
+                  liebevolle Umgang in Wort und Tat mit sich selbst.
+                </p>
+                <!--========-->
+                <p class="font-bold">Kommunikation ist alles.</p>
+                <!--========-->
+                <p class="xl:w-4/5">
+                  Mir ist es wichtig, Ihnen hier Erkenntnisse über sich zu
+                  schenken, Fallstricke in Ihrer Kommunikation zu finden, Ihnen
+                  das richtige Rüstzeug zu geben, um Schritt für Schritt Ihr
+                  Leben in Bewegung zu bringen. Ich werde oft als emphatischer
+                  und begeisterungsfähiger Mensch beschrieben. Ich könne gut
+                  zuhören, sei sehr verständnisvoll, schlagfertig,
+                  differenziert, reflektiert und optimistisch!
+                </p>
+              </div>
+              <!--========-->
+              <div
+                class="sm:col-span-4 col-span-full lg:col-span-6 xl:col-span-4 sm:order-3 order-1 h-full relative"
+              >
+                <img
+                  class="aspect-auto w-full sm:rounded-r-3xl rounded-t-3xl sm:rounded-tl-none h-full object-cover"
                   src="images/Home/1.jpg"
                   alt="//"
                 />
@@ -397,7 +450,6 @@
             </div>
           </div>
         </div>
-
         <!--========-->
         <div class="main-grid items-center xl:gap-14 gap-10">
           <!--========-->
@@ -904,7 +956,7 @@
       <!-- ==========section 005========== -->
       <section>
         <!--========-->
-        <div class="main-grid items-center xl:px-0 sm:px-5 lg:px-10 px-0">
+        <div class="main-grid pb-10 items-center xl:px-0 sm:px-5 lg:px-10 px-0">
           <!--========-->
           <div class="hidden xl:flex col-span-1"></div>
           <!--========-->
@@ -1043,13 +1095,15 @@
       <!-- ==========section 006========== -->
       <section class="bg-brown-200 bg-opacity-50 text-brown-400">
         <!--========-->
-        <div class="main-grid">
+        <div class="main-grid pb-20">
           <!--========-->
           <div class="hidden xl:flex col-span-1 order-1"></div>
           <!--========-->
-          <div class="xl:col-span-5 lg:col-span-6 col-span-full lg:order-2 order-2 space-y-6 md:px-16">
+          <div
+            class="xl:col-span-5 lg:col-span-6 col-span-full lg:order-2 order-2 space-y-6 md:px-16"
+          >
             <!--========-->
-            <h2 class=" hidden lg:block">Kontakt</h2>
+            <h2 class="hidden lg:block">Kontakt</h2>
             <!--========-->
             <form class="space-y-6" action="#">
               <!--========-->
@@ -1120,26 +1174,30 @@
                 />
               </div>
               <!--========-->
-              <div class="lg:pt-16 pt-5">
-                <button class="uppercase" type="submit">Senden</button>
+              <div class="lg:pt-12 pt-5">
+                <button class="uppercase inline-flex font-bold" type="submit">
+                  Senden
+                </button>
               </div>
             </form>
           </div>
           <!--========-->
-          <div class="xl:col-span-5 lg:col-span-6 col-span-full lg:order-3 order-1 md:px-16 lg:p-0">
+          <div
+            class="xl:col-span-5 lg:col-span-6 col-span-full lg:order-3 order-1 md:px-16 lg:p-0"
+          >
             <!--========-->
             <h2 class="lg:hidden block mb-8">Kontakt</h2>
             <!--========-->
             <div class="mb-8">
               <!--========-->
               <img
-                class="w-full aspect-auto"
+                class="w-full aspect-auto rounded-3xl"
                 src="images/home/3.jpg"
                 alt="//"
               />
             </div>
             <!--========-->
-            <div class=" flex justify-between ">
+            <div class="flex justify-between">
               <!--========-->
               <div>
                 <!--========-->
@@ -1151,7 +1209,7 @@
               </div>
               <!--========-->
               <div class="-mb-14 lg:block hidden">
-                <img src="images/Home/4.jpg" alt="//">
+                <img src="images/Home/4.jpg" alt="//" />
               </div>
             </div>
             <!--========-->
@@ -1282,9 +1340,9 @@
               </ul>
             </div>
             <!--========-->
-              <div class="mt-6 block lg:hidden">
-                <img src="images/Home/4.jpg" alt="//">
-              </div>
+            <div class="mt-6 block lg:hidden">
+              <img src="images/Home/4.jpg" alt="//" />
+            </div>
           </div>
           <!--========-->
           <div class="hidden xl:flex col-span-1 order-4"></div>
@@ -1293,7 +1351,7 @@
     </main>
     <!--====================footer====================-->
     <footer
-      class="bg-brown-400 py-10 main-grid gap-8 sm:gap-0 lg:items-end items-start mt-20 text-brown-200"
+      class="bg-brown-400 py-10 main-grid gap-8 sm:gap-0 lg:items-end items-start text-brown-200"
     >
       <!--========-->
       <div class="col-span-1 hidden lg:flex"></div>
@@ -1329,7 +1387,18 @@
     </footer>
     <!-----Swiper Js script---->
     <script src="js/swiper-bundle.min.js"></script>
-
+    <script>
+      var prevScrollpos = window.pageYOffset;
+      window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+          document.getElementById("navbar").style.top = "0";
+        } else {
+          document.getElementById("navbar").style.top = "-250px";
+        }
+        prevScrollpos = currentScrollPos;
+      };
+    </script>
     <script>
       var swiper = new Swiper(".mySwiper", {
         spaceBetween: 30,
