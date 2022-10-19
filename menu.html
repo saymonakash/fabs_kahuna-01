@@ -42,7 +42,7 @@
       <div
         class="transition-all duration-400 ease-in-out main-grid py-5"
         :class="minMenu ? 'lg:h-28 h-36 bg-brown-200 text-brown-400 drop-shadow-xl' : 'sm:h-48 h-28 text-light-brown'"
-        x-on:scroll.window="minMenu = (window.pageYOffset > 200) ? true : false"
+        x-on:scroll.window="minMenu = (window.pageYOffset > 600) ? true : false"
       >
         <!--========-->
         <div class="hidden xl:flex col-span-1"></div>
@@ -257,12 +257,16 @@
                   <!--========-->
                   <li>
                     <!--========-->
-                    <a class="hover:text-brown-200" href="#">Psychologische Beratung</a>
+                    <a class="hover:text-brown-200" href="#"
+                      >Psychologische Beratung</a
+                    >
                   </li>
                   <!--========-->
                   <li>
                     <!--========-->
-                    <a class="hover:text-brown-200" href="#">Gewaltfreie Kommunikaton</a>
+                    <a class="hover:text-brown-200" href="#"
+                      >Gewaltfreie Kommunikaton</a
+                    >
                   </li>
                   <!--========-->
                   <li>
@@ -272,12 +276,16 @@
                   <!--========-->
                   <li>
                     <!--========-->
-                    <a class="hover:text-brown-200" href="#">Systemische Beratung</a>
+                    <a class="hover:text-brown-200" href="#"
+                      >Systemische Beratung</a
+                    >
                   </li>
                   <!--========-->
                   <li>
                     <!--========-->
-                    <a class="hover:text-brown-200" href="#">Ablauf und Kosten</a>
+                    <a class="hover:text-brown-200" href="#"
+                      >Ablauf und Kosten</a
+                    >
                   </li>
                 </ul>
               </div>
@@ -1502,12 +1510,14 @@
       var prevScrollpos = window.pageYOffset;
       window.onscroll = function () {
         var currentScrollPos = window.pageYOffset;
-        if (prevScrollpos > currentScrollPos) {
-          document.getElementById("navbar").style.top = "0";
-        } else {
-          document.getElementById("navbar").style.top = "-250px";
+        if (window.pageYOffset > 300) {
+          if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+          } else {
+            document.getElementById("navbar").style.top = "-250px";
+          }
+          prevScrollpos = currentScrollPos;
         }
-        prevScrollpos = currentScrollPos;
       };
     </script>
     <script>
