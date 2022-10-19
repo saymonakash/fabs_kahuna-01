@@ -42,7 +42,7 @@
       <div
         class="transition-all duration-400 ease-in-out main-grid py-5"
         :class="minMenu ? 'lg:h-28 h-36 bg-brown-200 text-brown-400 drop-shadow-xl' : 'sm:h-48 h-28 text-light-brown'"
-        x-on:scroll.window="minMenu = (window.pageYOffset > 600) ? true : false"
+        x-on:scroll.window="minMenu = (window.pageYOffset > 400) ? true : false"
       >
         <!--========-->
         <div class="hidden xl:flex col-span-1"></div>
@@ -1510,7 +1510,7 @@
       var prevScrollpos = window.pageYOffset;
       window.onscroll = function () {
         var currentScrollPos = window.pageYOffset;
-        if (window.pageYOffset > 300) {
+        if (window.pageYOffset > 150) {
           if (prevScrollpos > currentScrollPos) {
             document.getElementById("navbar").style.top = "0";
           } else {
